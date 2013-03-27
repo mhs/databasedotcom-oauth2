@@ -205,8 +205,8 @@ module Databasedotcom
         
         client = self.class.client_from_oauth_token(access_token)
         client.endpoint = endpoint
-        session['salesforce.code'] = code
-        session['salesforce.access_token'] = access_token
+        # session['salesforce.code'] = code
+        # session['salesforce.access_token'] = access_token
 
         save_client_to_session(client)
         debug <<-message
