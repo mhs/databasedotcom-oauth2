@@ -205,10 +205,10 @@ module Databasedotcom
         
         client = self.class.client_from_oauth_token(access_token)
         client.endpoint = endpoint
-        env['salesforce']['code'] = code
-        env['salesforce']['access_token'] = access_token
+        session['salesforce.code'] = code
+        session['salesforce.access_token'] = access_token
 
-        # save_client_to_session(client)
+        save_client_to_session(client)
         debug <<-message
           (4) access_token immediatly post get token call #{access_token.inspect}
           (5) client from token: #{client.inspect}
